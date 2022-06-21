@@ -34,9 +34,9 @@ jobs:
       - name: Inject Django app's environment variables
         uses: actions/checkout@v2
         env:
-          SECRET_KEY: ${{ env.SECRET_KEY }}
-          DEBUG: ${{ env.DEBUG }}
-          ALLOWED_HOSTS: ${{ env.ALLOWED_HOSTS }}
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
+          DEBUG: ${{ secrets.DEBUG }}
+          ALLOWED_HOSTS: ${{ secrets.ALLOWED_HOSTS }}
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
       
