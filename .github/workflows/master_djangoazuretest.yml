@@ -32,6 +32,7 @@ jobs:
 
       # Environment variables
       - name: Inject Django app's environment variables
+        uses: actions/checkout@v2
         env:
           SECRET_KEY: ${{ secrets.SECRET_KEY }}
           DEBUG: ${{ secrets.DEBUG }}
