@@ -35,7 +35,7 @@ jobs:
     - name: Collect static
       run: python manage.py collectstatic
 
-    - name: Run tests
+    - name: Run all tests
       env:
         SECRET_KEY: ${{ secrets.SECRET_KEY }}
         DEBUG: ${{ secrets.DEBUG }}
