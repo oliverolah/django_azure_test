@@ -30,7 +30,7 @@ jobs:
         source venv/bin/activate
 
     - name: Inject Django app's environment variables
-        uses: actions/checkout@v2
+        # uses: actions/checkout@v2
         env:
           SECRET_KEY: ${{ secrets.SECRET_KEY }}
           DEBUG: ${{ secrets.DEBUG }}
