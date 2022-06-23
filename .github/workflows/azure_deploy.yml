@@ -11,6 +11,9 @@ on:
 
 env:
   WEBAPP_NAME: 'djangoazuretest'  # Replace with the name of your Azure web app
+  SECRET_KEY: ${{ secrets.SECRET_KEY }}
+  DEBUG: ${{ secrets.DEBUG }}
+  ALLOWED_HOSTS: ${{ secrets.ALLOWED_HOSTS }}
 
 jobs:
   build-and-test:
@@ -36,10 +39,6 @@ jobs:
       run: python manage.py collectstatic
 
     - name: Run all tests
-      env:
-        SECRET_KEY: ${{ secrets.SECRET_KEY }}
-        DEBUG: ${{ secrets.DEBUG }}
-        ALLOWED_HOSTS: ${{ secrets.ALLOWED_HOSTS }}
       run: python manage.py test
     
     - name: Upload artifact for deployment jobs
