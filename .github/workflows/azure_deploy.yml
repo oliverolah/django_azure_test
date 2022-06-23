@@ -52,6 +52,9 @@ jobs:
   deploy-to-webapp:
     needs: build-and-test
     runs-on: ubuntu-latest
+    environment:
+      name: 'Production'
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
       - uses: actions/download-artifact@v2
@@ -74,3 +77,5 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: ${{ env.WEBAPP_NAME}}
+          slot-name: 'Production'
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_EF388E6207F543C382500D9D921CD0A1 }}
