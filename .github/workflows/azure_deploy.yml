@@ -44,9 +44,7 @@ jobs:
         SECRET_KEY: ${{ env.SECRET_KEY }}
         DEBUG: ${{ env.DEBUG }}
         ALLOWED_HOSTS: ${{ env.ALLOWED_HOSTS }}
-      run: | 
-        python manage.py collectstatic
-        python manage.py test
+      run: python manage.py test
     
     - name: Upload artifact for deployment jobs
       uses: actions/upload-artifact@v2
