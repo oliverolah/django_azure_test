@@ -29,7 +29,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'whitenoise.runserver_nostatic', # Whitenoise overriding Django's staticfiles functionality
     'django.contrib.staticfiles',
-    'main', # App
+    'main.apps.MainConfig', # App
 ]
 
 MIDDLEWARE = [
