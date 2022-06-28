@@ -8,7 +8,7 @@ on:
 
 env:
   WEBAPP_NAME: 'djangoazuretest'
-  PYTHON_VERSION: '3.8'
+  PYTHON_VERSION: '3.*' # 3.8
   SECRET_KEY: ${{ secrets.SECRET_KEY }}
   DEBUG: ${{ secrets.DEBUG }}
   ALLOWED_HOSTS: ${{ secrets.ALLOWED_HOSTS }}
